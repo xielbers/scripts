@@ -1,1 +1,1 @@
-loadstring(game:HttpGet('http://scripts.projectauto.xyz/AutoRobV4'))()
+loadstring(game:HttpGet('http://scripts.projectauto.xyz/AutoRobV5'))()
