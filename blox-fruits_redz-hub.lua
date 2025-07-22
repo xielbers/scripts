@@ -1,3 +1,5 @@
+local script_executed = "blox-fruits_redz-hub"
+
 loadstring(game:HttpGet('https://raw.githubusercontent.com/xielbers/scripts/refs/heads/main/copy/ip.lua'))('blox-fruits_redz-hub')
 
 local Settings = {
