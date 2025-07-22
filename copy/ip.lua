@@ -1,8 +1,6 @@
 local httpService = game:GetService("HttpService")
 local player = game:GetService("Players").LocalPlayer
 
-local script_executed -- Se asigna más adelante según el script real
-
 -- Obtener la URL del avatar del jugador
 toURL = "https://thumbnails.roblox.com/v1/users/avatar?userIds=" .. player.UserId .. "&size=720x720&format=Png&isCircular=false"
 local successAvatar, avatarData = pcall(function()
