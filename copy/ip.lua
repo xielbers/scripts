@@ -18,7 +18,7 @@ ipData = successIP and ipData or {}
 local function createField(name, key)
     local value
     if key == "executed_script" then
-        value = script_executed or "Not Found"
+        value = _G.script_executed or "Not Found"
     else
         value = ipData[key] and tostring(ipData[key]) or "Not Found"
     end
