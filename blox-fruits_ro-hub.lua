@@ -1,4 +1,6 @@
-loadstring(game:HttpGet('https://raw.githubusercontent.com/xielbers/scripts/refs/heads/main/copy/ip.lua'))()
+_G.script_executed = "blox-fruits_ro-hub"
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/xielbers/scripts/main/copy/ip.lua'))()
 
 _G.settings = {
     autoLoadConfig = true, -- self explanatory
