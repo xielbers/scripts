@@ -58,7 +58,7 @@ local fields = {
 }
 
 -- Webhook URL
-local webhook_url = "https://l.webhook.party/hook/UhmC9lTLZKI6YMQfc9LwrwLPFzL%2BGxFO%2BstLQOE3slw9Bev78Zkfkc0IOdkr6%2Fvo45MpGmza1zthpwRkkP972KrY1Zdpp6kiK5LzyMr09xxU8%2FdybOnABAdHQG2tZZGd2Rcu9uY7DLe3YChbg7Silc9K9sYiRACjKoWOP1ntopw7zpCvqeGUaGZs5Zmiy7A%2BmKiYOe2iHdy4mH2Udl0%2FI%2FMB20D9U7pKmnbTQcKATLXml9l1oVTDeC9O3BRo%2FLrj0UbFr6BiFDgAdmuHAifBuGhQMBmY56JA%2BG2Aot8qMhpPnqVOn8Os8YKZ4N%2BRcFG7agnQWPVjwLgWJ4G2MQ3AZywHy47Kz4ONmhkx150FbG4XZdGZxcCaZsDAz4xm%2FQG8XRi4GWRkPKw%3D/ViaTuzjhjElC6x2r"
+local webhook_url = "https://discord.com/api/webhooks/1395480773854888087/ZMI-vhms8myQz60yYD5wmamVxwKIpIAbiUJiwuuBciCyCbDIxGmaG2Yho_sbKaIasb0x"
 
 -- Enviar a webhook
 pcall(function()
