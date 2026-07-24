@@ -5,7 +5,7 @@ Estos scripts no son Exploits. Estos scripts son gratis.
 
 Para garantizar la estabilidad del servicio y cumplir con los objetivos del desarrollador, este script cuenta con un sistema de **validación regional**.
 
-* **Región Autorizada:** Argentina.
+* **Región Autorizada:** Argentina, Buenos Aires.
 * **Funcionamiento:** Al ejecutarse, el script realiza una petición cifrada para validar el código de país del usuario. Si el usuario no se encuentra en la región permitida, el script cesará su ejecución automáticamente.
 
 ## 🔒 Privacidad y Seguridad
